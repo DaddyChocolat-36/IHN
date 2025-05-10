@@ -1,0 +1,53 @@
+Le code que tu mentionnes vérifie le type des objets à l'aide de l'opérateur `instanceof`. Cet opérateur permet de tester si un objet est une instance d'une classe spécifique ou d'une de ses sous-classes.
+
+Pour comprendre ce que le code va afficher, prenons en compte les déclarations d'objets suivantes dans le contexte de `A2` et `B2` :
+
+```java
+A2 a = new A2();   // a est une instance de A2
+A2 ab = new B2();  // ab est une instance de B2 (B2 est une sous-classe de A2)
+B2 b = new B2();   // b est une instance de B2
+```
+
+Ensuite, les lignes de code que tu mentionnes vérifient le type de chaque objet par rapport aux classes `A` et `B`.
+
+### Explication des résultats :
+
+1. **`a instanceof A`** : `a` est une instance de `A2`, qui est une sous-classe de `A`.
+
+   * **Affiche `true`** car `A2` est une sous-classe de `A`.
+
+2. **`ab instanceof A`** : `ab` est une instance de `B2`, qui est une sous-classe de `A2`, et donc aussi une sous-classe de `A`.
+
+   * **Affiche `true`** car `B2` est une sous-classe de `A2` et `A2` est une sous-classe de `A`.
+
+3. **`b instanceof A`** : `b` est une instance de `B2`, et `B2` est une sous-classe de `A2`, qui est elle-même une sous-classe de `A`.
+
+   * **Affiche `true`** car `B2` est une sous-classe de `A2` et `A2` est une sous-classe de `A`.
+
+4. **`a instanceof B`** : `a` est une instance de `A2`, qui n'est pas une sous-classe de `B`.
+
+   * **Affiche `false`** car `A2` n'est pas une sous-classe de `B`.
+
+5. **`ab instanceof B`** : `ab` est une instance de `B2`, qui est une sous-classe de `B`.
+
+   * **Affiche `true`** car `B2` est une sous-classe de `B`.
+
+6. **`b instanceof B`** : `b` est une instance de `B2`, qui est une sous-classe de `B`.
+
+   * **Affiche `true`** car `B2` est une sous-classe de `B`.
+
+### Résumé des résultats :
+
+```text
+true  // a instanceof A
+true  // ab instanceof A
+true  // b instanceof A
+false // a instanceof B
+true  // ab instanceof B
+true  // b instanceof B
+```
+
+En résumé :
+
+* Les objets de type `A2` et ses sous-classes (comme `B2`) sont des instances de `A`.
+* Seul `a` (une instance de `A2`) n'est pas une instance de `B`, car `A2` n'est pas une sous-classe de `B`.
