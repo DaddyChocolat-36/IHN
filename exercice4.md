@@ -1,3 +1,20 @@
+# Exercice n° 4
+Pour chacun des appels de méthode ci-dessous, dire s'il va être compilé correctement et
+auquel cas, quelle méthode est appelée effectivement à l'exécution ?
+ Point p = new Point(1,2);
+ Rectangle r = new Rectangle(p, 2, 3);
+ Rectangle t = new SlantedRectangle(p, 2, 3);
+ SlantedRectangle s = new SlantedRectangle(p, 2, 3);
+ System.out.println(r.surface());
+ r.rotate(2);
+ System.out.println(r.contains(p));
+ System.out.println(t.surface());
+ t.rotate(2);
+ System.out.println(t.contains(p));
+ System.out.println(s.surface());
+ s.rotate(2);
+ System.out.println(s.contains(p));
+
 p est une instance de Point.
 r est une instance de Rectangle.
 t est une référence de type Rectangle vers un objet SlantedRectangle.
