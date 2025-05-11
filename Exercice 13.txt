@@ -1,0 +1,57 @@
+Résolution de l'exercice 13
+
+Définitions des classes :
+-------------------------
+class C {
+    char ch = 'C';
+    char getCh() { return ch; }
+}
+
+class D extends C {
+    char ch = 'D';
+    char getCh() { return ch; }
+}
+
+
+Fragment de programme :
+-----------------------
+C c = new C();      // c est une référence de type C, pointant sur un objet de type C
+C cd = new D();     // cd est une référence de type C, mais pointe sur un objet de type D
+D d = new D();      // d est une référence de type D, pointant sur un objet de type D
+
+
+Analyse des sorties :
+---------------------
+
+1. System.out.println(c.ch); 
+   Réponse: affiche 'C'
+   Explication : c est de type C, donc on accède à l’attribut `ch` de la classe C.
+
+2. System.out.println(c.getCh());
+   Réponse: affiche 'C'
+   Explication : méthode appelée selon le type réel de l’objet (C), donc getCh() de C.
+
+3. System.out.println(cd.ch);
+   Réponse: affiche 'C'
+   Explication : cd est de type C, donc on accède à l’attribut `ch` défini dans C, même si l’objet est un D.
+
+4. System.out.println(cd.getCh());
+   Réponse: affiche 'D'
+   Explication : cd est de type C, mais l’objet réel est un D. Donc, la méthode redéfinie dans D est appelée.
+
+5. System.out.println(d.ch);
+   Réponse: affiche 'D'
+   Explication : d est de type D, on accède à son attribut `ch`, donc celui de D.
+
+6. System.out.println(d.getCh());
+   Réponse: affiche 'D'
+   Explication : d est de type D, donc getCh() de D est appelée.
+
+Résultat final affiché :
+-------------------------
+C
+C
+C
+D
+D
+D
