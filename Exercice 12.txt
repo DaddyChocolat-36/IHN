@@ -1,0 +1,17 @@
+Résolution de l'exercice 12 :
+
+1. La méthode `boolean contains(Rectangle)` doit-elle être redéfinie dans `SlantedRectangle` ?
+Oui, car un `SlantedRectangle` (rectangle incliné) n'a pas les mêmes propriétés géométriques qu’un `Rectangle` standard.
+La méthode héritée de `Rectangle` ne permettrait pas de vérifier correctement si un `Rectangle` est contenu dans un `SlantedRectangle`.
+
+2. Quels cas ne sont pas couverts par cette redéfinition ?
+Les cas où un `SlantedRectangle` doit contenir un autre `SlantedRectangle` ne sont pas couverts.
+
+3. Ajout de la méthode `boolean contains(SlantedRectangle)` dans les deux classes :
+- Dans `Rectangle`, cela permet de tester si un rectangle contient un `SlantedRectangle`.
+- Dans `SlantedRectangle`, cela permet de tester si un `SlantedRectangle` contient un autre `SlantedRectangle`.
+
+4. Quels cas ne sont toujours pas couverts ?
+- Un `Rectangle` contient un `SlantedRectangle` mal orienté.
+- Inclusion partielle (intersection partielle des formes).
+- Inclusion avec transformation (ex. : translation ou rotation non prises en compte).
